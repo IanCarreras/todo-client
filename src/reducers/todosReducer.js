@@ -1,16 +1,15 @@
+import _ from 'lodash'
 import {
   GET_TODOS
 } from '../constants'
 
-const defaultState = {
-  allTodos: []
-}
-
-export default (state=defaultState, action) => {
+export default (state=[], action) => {
+  let newState = null
 
   switch (action.type) {
     case GET_TODOS:
-      return Object.assign(state, { allTodos: action.data })
+      newState = action.data
+      return newState
     default:
       return state
   }

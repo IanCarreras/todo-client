@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import actionCreators from './actions'
 
 import './App.css'
+import Todo from './components/todo'
 
 class App extends Component {
 
@@ -13,10 +14,12 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props.todos[1])
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Todo App</h1>
+          <Todo title={this.props.todos.title} />
         </header>
       </div>
     )
